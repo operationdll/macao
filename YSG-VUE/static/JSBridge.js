@@ -155,11 +155,15 @@ function checkVersion(params) {
 
 //清理缓存
 function h5Version(){
-  console.log('清除缓存:'+new Date());
-  if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
-    window.webkit.messageHandlers.h5Version.postMessage({ version: '1.0/20/09/2018', date: new Date() });
-  }else{
-    JSInterface.h5Version('1.0/20/09/2018',new Date());
+  try {
+    console.log('清除缓存:'+new Date());
+    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+      window.webkit.messageHandlers.h5Version.postMessage({ version: '1.0/20/09/2018', date: new Date() });
+    }else{
+      JSInterface.h5Version('1.0/20/09/2018',new Date());
+    }
+  } catch (error) {
+    console.log('清除缓存报错:'+error);
   }
 }
 
