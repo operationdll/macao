@@ -2,7 +2,7 @@
   <div class="menux">
       <h2>{{language.menu.title}}</h2>
       <ul>
-          <li @click="find">{{language.menu.find}}<i></i></li>
+          <!-- <li @click="find">{{language.menu.find}}<i></i></li> -->
           <li @click="tabLanguage">{{language.menu.language}}<i></i></li>
           <li @click="help">{{language.menu.help}} <i></i></li>
           <li @click="aboutUs">{{language.menu.aboutus}}<i></i></li>

@@ -167,6 +167,19 @@ function h5Version(){
   }
 }
 
+//连接wifi
+function jumpToWifiSetting(){
+  try {
+    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+      window.webkit.messageHandlers.jumpToWifiSetting.postMessage(" ");
+    }else{
+      JSInterface.jumpToWifiSetting();
+    }
+  } catch (error) {
+    console.log('连接wifi报错:'+error);
+  }
+}
+
 /**
  * 初始化数据
  */
