@@ -167,6 +167,9 @@ export default {
     };
   },
   created: function() {
+    //未登录就跳转到登录页面
+    this.$router.replace("/loginforguest");
+
     var _this = this;
     if (localStorage.lat) {
       this.distanceFlag = true;
