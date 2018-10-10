@@ -42,10 +42,27 @@
 				<section class="index_content">
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide" v-for="(item,index) in shortcutList" @click="goNext(item.key)">
+							<!-- <div class="swiper-slide" v-for="(item,index) in shortcutList" @click="goNext(item.key)">
 								<img :src="item.imgSrc" style="width:30px;height:30px;">
 								<p>{{item.title}}</p>
+							</div> -->
+              <div class="swiper-slide" @click="goNext('doorLock')">
+								<img src="../../assets/images/fastkey/doorLock.png" style="width:30px;height:30px;">
+								<p>门锁</p>
 							</div>
+              <div class="swiper-slide" @click="goNext('wifi')">
+								<img src="../../assets/images/fastkey/wifi.png" style="width:30px;height:30px;">
+								<p>WIFI</p>
+							</div>
+              <div class="swiper-slide" @click="goNext('cusCon')">
+								<img src="../../assets/images/fastkey/cusCon.png" style="width:30px;height:30px;">
+								<p>客控</p>
+							</div>
+              <div class="swiper-slide" @click="goNext('lift')">
+								<img src="../../assets/images/fastkey/lift.png" style="width:30px;height:30px;">
+								<p>电梯</p>
+							</div>
+
 						</div>
              <!-- Add Arrows -->
     <div v-show="shortcutList.length>4" class="swiper-button-next"></div>
@@ -884,6 +901,56 @@ export default {
             } else {
               _this.$router.replace("/loginforguest");
             }
+          break;
+        case "doorLock":
+            _this.$router.push({
+              path: "/doorLock",
+              query: { pageFlag: "home" }
+            });
+          break;
+        case "cusCon":
+            _this.$router.push({
+              path: "/cusCon",
+              query: { pageFlag: "home" }
+            });
+          break;
+        case "wifi":
+           let dialog = window.YDUI.dialog;
+           dialog.confirm('<center>WIFI</center>','SSID:chengshibinguan</br>密 码:12345677', [
+                {
+                    txt: '点击连接',
+                    color: false,
+                    callback: function () {
+                        _this.$dialog.toast({ mes: '连接成功', timeout: 1000 });
+                    }
+                },
+                {
+                    txt: '取消',
+                    color: false,
+                    callback: function () {
+
+                    }
+                }
+            ]);
+          break;
+        case "lift":
+           var dialog = window.YDUI.dialog;
+           dialog.confirm('<center>电梯</center>','<table width="100%"><tr><td width="40%" align="center">楼层</td><td align="center"><div style="background:#f2c466;color:white;border-radius:5px;">8</div></td><td width="40%" align="center"><button style="border-radius:5px;border:1px solid grey;">其它</button></td></tr>', [
+                {
+                    txt: '启动电梯',
+                    color: false,
+                    callback: function () {
+                        _this.$dialog.toast({ mes: '启动成功', timeout: 1000 });
+                    }
+                },
+                {
+                    txt: '取消',
+                    color: false,
+                    callback: function () {
+
+                    }
+                }
+            ]);
           break;
       }
     },

@@ -63,6 +63,9 @@ import translate from '../components/function/translate.vue'
 import laundry from '../components/function/laundry.vue'
 import lifeSohp from '../components/function/lifeSohp.vue'
 
+import doorLock from '../components/function/doorLock.vue'
+import cusCon from '../components/function/cusCon.vue'
+
 /**
  *社区生活
  */
@@ -253,5 +256,8 @@ export default new Router({
         {path: '/staffOrder',name: 'staffOrder',component: staffOrder},//员工查看订单
         {path: '/laundry',name: 'laundry',component: laundry},//洗衣服务
         {path: '/lifeSohp',name: 'lifeSohp',component: lifeSohp},//生活超市
+
+        {path: '/doorLock',name: 'doorLock',component: doorLock},//门锁
+        {path: '/cusCon',name: 'cusCon',component: cusCon},//客控
     ]
 })
