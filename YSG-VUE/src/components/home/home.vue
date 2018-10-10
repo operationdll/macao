@@ -938,6 +938,7 @@ export default {
                     txt: '点击连接',
                     color: false,
                     callback: function () {
+                        //jumpToWifiSetting
                         _this.$dialog.toast({ mes: '连接成功', timeout: 1000 });
                     }
                 },
