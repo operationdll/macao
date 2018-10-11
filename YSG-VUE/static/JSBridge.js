@@ -171,7 +171,7 @@ function h5Version(){
 function jumpToWifiSetting(){
   try {
     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
-      window.webkit.messageHandlers.jumpToWifiSetting.postMessage();
+      window.webkit.messageHandlers.jumpToWifiSetting.postMessage(" ");
     }else{
       JSInterface.jumpToWifiSetting();
     }
