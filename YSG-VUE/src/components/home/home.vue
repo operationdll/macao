@@ -932,7 +932,23 @@ export default {
             });
           break;
         case "wifi":
-           jumpToWifiSetting();
+           let dialog = window.YDUI.dialog;
+           dialog.confirm('<center>WIFI</center>','SSID:chengshibinguan</br>密 码:12345677', [
+                {
+                    txt: '点击连接',
+                    color: false,
+                    callback: function () {
+                        jumpToWifiSetting();
+                    }
+                },
+                {
+                    txt: '取消',
+                    color: false,
+                    callback: function () {
+
+                    }
+                }
+            ]);
           break;
         case "lift":
            var dialog = window.YDUI.dialog;
