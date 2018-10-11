@@ -44,12 +44,12 @@
                 this.$store.dispatch('appStart', params).then(function (res) {
                     _this.link = _this.appStart.data.list[0].pic;
                      setTimeout(() => {
-                           this.updateApp();
+                           _this.updateApp();
                      }, 5000);
                 })
             }else{
                 setTimeout(() => {
-                    this.updateApp();
+                    _this.updateApp();
                 }, 5000);
             }
         },
@@ -101,10 +101,14 @@
                     groupid: localStorage.groupid
                 }
                 this.$store.dispatch('appUpdate',params).then(function(res){
-                    _this.versionData = res.data
-                    console.log(res.data)
+                    _this.versionData = res.data;
                     // 版本校验
                     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+                        //判断是否第一次安装
+                        if(localStorage.isFirstLoad === undefined){
+                            localStorage.isFirstLoad = "loaded";
+                            return;
+                        }
                         let params = {
                             isMust:_this.versionData.forced, //是否强制更新
                             doneTitle:'去升级', //确定按钮
