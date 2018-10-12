@@ -34,24 +34,24 @@
                 this.indentity()
             }
             
-            if(localStorage.HOTELID){
-                let params = {
-                    groupid:localStorage.groupid,
-                    hotelid:localStorage.HOTELID,
-                    platform:localStorage.platform,
-                    identity:localStorage.indentity
-                }
-                this.$store.dispatch('appStart', params).then(function (res) {
-                    _this.link = _this.appStart.data.list[0].pic;
-                     setTimeout(() => {
-                           _this.updateApp();
-                     }, 5000);
-                })
-            }else{
-                setTimeout(() => {
-                    _this.updateApp();
-                }, 5000);
-            }
+            // if(localStorage.HOTELID){
+            //     let params = {
+            //         groupid:localStorage.groupid,
+            //         hotelid:localStorage.HOTELID,
+            //         platform:localStorage.platform,
+            //         identity:localStorage.indentity
+            //     }
+            //     this.$store.dispatch('appStart', params).then(function (res) {
+            //         _this.link = _this.appStart.data.list[0].pic;
+            //          setTimeout(() => {
+            //                _this.updateApp();
+            //          }, 5000);
+            //     })
+            // }else{
+            //     setTimeout(() => {
+            //         _this.updateApp();
+            //     }, 5000);
+            // }
         },
         mounted:function () {
             //友盟统计
