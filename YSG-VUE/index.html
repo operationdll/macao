@@ -166,7 +166,6 @@
                                             localStorage.PWD = '';
                                             dialog.alert(msg3);
                                         }else if(res.code == 1){
-                                            dialog.alert(msg4);
                                             _this.$router.replace("/loginforguest");
                                         }else{
                                             dialog.alert(res.msg);
@@ -221,7 +220,6 @@
                         }
                     });
                 }else if(res.code == 2){
-                    dialog.alert(msg4);
                     _this.$router.replace("/loginforguest");
                 }else if(res.code != 0){
                     dialog.alert(res.msg);
@@ -369,7 +367,6 @@
                         _this.$router.push(objParams);
                     }
                 }else if(res.code == 1){
-                    _this.$dialog.toast({mes: msg1, timeout: 1000});
                     _this.$router.replace("/loginforguest");
                 }else if(res.code == 2){
                     _this.$dialog.toast({mes: msg2, timeout: 1000});
