@@ -180,6 +180,19 @@ function jumpToWifiSetting(){
   }
 }
 
+//调用门锁
+function jumpToLock(){
+  try {
+    if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
+      window.webkit.messageHandlers.jumpToLock.postMessage(" ");
+    }else{
+      JSInterface.jumpToLock();
+    }
+  } catch (error) {
+    console.log('调用门锁报错:'+error);
+  }
+}
+
 /**
  * 初始化数据
  */

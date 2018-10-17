@@ -912,10 +912,11 @@ export default {
             }
           break;
         case "lock":
-            _this.$router.push({
-              path: "/doorLock",
-              query: { pageFlag: "home" }
-            });
+            // _this.$router.push({
+            //   path: "/doorLock",
+            //   query: { pageFlag: "home" }
+            // });
+            jumpToLock();
           break;
         case "guestcontrol":
             _this.$router.push({
