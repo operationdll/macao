@@ -9,13 +9,15 @@ import router from '../router'
 localStorage.identity  = 'test'
 axios.defaults.baseURL = 'https://service.easyiservice.com'
 // axios.defaults.headers.common['authToken'] = localStorage.TOKEN
-
+//api时间
+var time = "";
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
 	//打开loading 遮罩层
 	store.dispatch('showLoading');
 	return config;
 }, function (error) {
+	time = "";
     router.push('/error')
     store.dispatch('hideLoading');
 	return Promise.reject(error);
@@ -26,6 +28,7 @@ axios.interceptors.response.use(function (response) {
 	store.dispatch('hideLoading');
 	return response;
 }, function (error) {
+	time = "";
 	router.push('/error')
     store.dispatch('hideLoading');
 	return Promise.reject(error);
@@ -180,27 +183,36 @@ function apiPost (url, data) {
     var resultObj = getObj(data);
 	return axios.post(url, resultObj)
 }
+
+//时间差
+var difTime = 0;
 var getObj = function(params){
-    var str = "";
-    var time = "";
-    $.ajax({
-		// url:'http://47.93.201.72:80/system/getTime',
-		url:'https://service.easyiservice.com/system/getTime',
-		type:'GET', //GET
-        async:false,    //或false,是否异步
-        timeout:5000,    //超时时间
-        dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
-        success:function(data,textStatus,jqXHR){ 
-            time = data.data.time;
-        }
-    });
-    params.time = time;
-    let p = Object.keys(params).sort();
-    for (var k in p){
-        str += (p[k]+params[p[k]]);
+	var str = "";
+	if(time===""){
+		$.ajax({
+			url:'https://service.easyiservice.com/system/getTime',
+			type:'GET', //GET
+			async:false,    //或false,是否异步
+			timeout:5000,    //超时时间
+			dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+			success:function(data){ 
+				time = data.data.time;
+				var timestamp = Math.ceil(new Date().getTime()/1000);
+				difTime = timestamp - time;
+			}
+		});
+	}else{
+		time = Math.ceil(new Date().getTime()/1000)+difTime;
 	}
-    str += "CtUyV$8MGoK8u5L*P0Q50T/b8S9iclS*LQqo";
-    var sign = md5(str);
+	params.time = time;
+	let p = Object.keys(params).sort();
+    for (var k in p){
+		if(p[k]!="sign"){
+			str += (p[k]+params[p[k]]);
+		}
+	}
+	str += "CtUyV$8MGoK8u5L*P0Q50T/b8S9iclS*LQqo";
+	var sign = md5(str);
     params.sign = sign;
     return params;
 }

@@ -156,11 +156,11 @@ function checkVersion(params) {
 //清理缓存
 function h5Version(){
   try {
-    console.log('清除缓存:'+new Date());
+    let v = '1.0/07/12/2018';
     if(/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)){
-      window.webkit.messageHandlers.h5Version.postMessage({ version: '1.0/20/09/2018', date: new Date() });
+      window.webkit.messageHandlers.h5Version.postMessage({ version: v, date: new Date() });
     }else{
-      JSInterface.h5Version('1.0/20/09/2018',new Date());
+      JSInterface.h5Version(v,new Date());
     }
   } catch (error) {
     console.log('清除缓存报错:'+error);

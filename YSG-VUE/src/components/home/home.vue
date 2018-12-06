@@ -34,8 +34,7 @@
 					</ul>
 					<div class="smart_home">
             <!--@click="goNext(shortcutList[0].key)" <img style="width: .4rem;vertical-align: middle;display: inline-block;" src="../../assets/images/service-btn.png" alt="">-->
-						<button type="button" v-if="isZH">快捷服务</button>
-            <button type="button" v-if="!isZH">Services</button>
+						<button type="button"></button>
 					</div>
 				</section>
 				<!--快捷功能-->
