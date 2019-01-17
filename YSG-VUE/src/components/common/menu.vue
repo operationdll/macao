@@ -6,8 +6,8 @@
           <li @click="tabLanguage">{{language.menu.language}}<i></i></li>
           <li @click="help">{{language.menu.help}} <i></i></li>
           <li @click="aboutUs">{{language.menu.aboutus}}<i></i></li>
-          <li @click="emSign">{{language.menu.emSign}} <i></i></li>
-          <li @click="updataApp">{{language.menu.update}}<i></i></li>
+          <!-- <li @click="emSign">{{language.menu.emSign}} <i></i></li>
+          <li @click="updataApp">{{language.menu.update}}<i></i></li> -->
       </ul>
   </div>
 </template>

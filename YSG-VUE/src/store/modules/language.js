@@ -319,158 +319,158 @@ const state = {
 	},
 	zh:{
 		menu:{
-			find:'查找物业',
-			language:'语言',
-			help:'帮助',
-			aboutus:'关于我们',
-			emSign:'员工登录',
-			title:'设置',
-            update:'版本检查'
+			find:'查找物業',
+			language:'語言',
+			help:'幫助',
+			aboutus:'關於我們',
+			emSign:'員工登陸',
+			title:'設置',
+            update:'版本檢查'
 		},
 		promotion:{
-			title:'促销优惠',
+			title:'促銷優惠',
             more:'更多',
-			porpertyProper:'物业促销',
-			porpertyNews:'物业新闻',
-			grounpNews:'集团促销',
-			grounpAc:'集团新闻'
+			porpertyProper:'物業促銷',
+			porpertyNews:'物業新聞',
+			grounpNews:'集團促銷',
+			grounpAc:'集團新聞'
 		},
 		raiders:{
 			title:'本地攻略',
             more:'更多'
 		},
         community:{
-            title:'社区生活',
-            propertyActivity:'物业活动',
-            opinionSurvey:'物业通知',
-            shopping:'体验购物',
-            ascottLife:'雅诗阁生活',
-            feedback:'意见反馈',
-	        ssr:'新闻',
+            title:'社區生活',
+            propertyActivity:'物業活動',
+            opinionSurvey:'物業通知',
+            shopping:'體驗購物',
+            ascottLife:'生活',
+            feedback:'意見反饋',
+	        ssr:'新聞',
             more:'更多',
-			buy:'购买',
+			buy:'購買',
             submit:'提交',
-            signUp:'报名',
-	        life:'生活服务',
-            apply:'开始时间',
-            start:'结束时间',
-			sign:'报名',
-			chanel:'频道',
+            signUp:'報名',
+	        life:'生活服務',
+            apply:'開始時間',
+            start:'結束時間',
+			sign:'報名',
+			chanel:'頻道',
 			save:'保存'
         },
 		func:{
-			translate:'翻译',
-            tel:'电话'
+			translate:'翻譯',
+            tel:'電話'
 		},
 		home:{
-			findResidence:'物业查询',
+			findResidence:'物業查詢',
 			search:'搜索',
-			profile:'物业介绍',
+			profile:'物業介紹',
 			virtual:'全景',
 			apartment:'房型列表',
-			fire:'楼层消防',
+			fire:'樓層消防',
             how:'交通信息'
 		},
 		myCenter:{
-			room_info:'房间号',
+			room_info:'房間號',
 			message:'消息',
 			notice:'收藏',
 			log_out:'退出',
-			changePwd:'修改密码',
-			oaId:'员工ID',
-			gsm:'员工系统',
-			bill:'账单',
-			invoices:'发票',
-			invoices_header:'开具发票',
-			invoices_manage:'票据管理',
-			order:'订单',
-			viewOrder:'查看订单'
+			changePwd:'修改密碼',
+			oaId:'員工ID',
+			gsm:'員工系統',
+			bill:'賬單',
+			invoices:'發票',
+			invoices_header:'開具發票',
+			invoices_manage:'票據管理',
+			order:'訂單',
+			viewOrder:'查看訂單'
 		},
         common:{
-            screen:'筛选',
+            screen:'篩選',
 			more:'更多',
-	        loginTxt:'确定退出?',
+	        loginTxt:'確定退出?',
 	        cancel:'取消',
-	        sure:'确定',
-            noMoreData:'没有更多数据了~'
+	        sure:'確定',
+            noMoreData:'沒有更多數據了~'
 
         },
 		msg:{
-			empty_username:'请输入用户名',
-			empty_pwd:'请输入密码',
-			empty_one:'输入信息不完整',
-			info_err:'账号或密码错误',
-            empty_name:'请输入姓名!',
-            empty_phone:'请输入手机号!',
-            empty_num_par:'请输入参与人数!',
-            empty_num_buy:'请输入购买数量!',
-            login_err:'登录信息错误',
-            buy_info:'您提交的订单已成功，我们会尽快联系您',
-			lifeMsg:'以下服务由第三方提供并只提供中文支持。相关服务和责任将由该第三方承担。如有问题请咨询该公司客服',
-			createInvoice:'开具发票：此功能适用于【增值税专用发票】，具体金额及发票拆分请与前台联系',
-			manageInvoice:'票据管理：此功能适用于查看所有开具发票记录',
-			buy_confirm:'确定购买吗？'
+			empty_username:'請輸入用戶名',
+			empty_pwd:'請輸入密碼',
+			empty_one:'輸入信息不完全',
+			info_err:'賬號或密碼錯誤',
+            empty_name:'請輸入姓名!',
+            empty_phone:'請輸入手機號!',
+            empty_num_par:'請輸入參與人數!',
+            empty_num_buy:'請輸入購買數量!',
+            login_err:'登錄信息錯誤',
+            buy_info:'您提交的訂單已成功，我們會盡快聯繫你',
+			lifeMsg:'以下服務由第三方提供并只提供中文支持。相關服務和責任將由該三方承擔。如有問題請咨詢該公司客服',
+			createInvoice:'開具發票：此功能適用於【增值稅專用發票】，具體金額與發票拆分請與前台聯繫',
+			manageInvoice:'票據管理：此功能適用於查看所有開具發票記錄',
+			buy_confirm:'確定購買嗎？'
 		},
 		login:{
-			sign:'登录',
-			residence:'选择物业',
-			room:'房间号',
+			sign:'登陸',
+			residence:'選擇物業',
+			room:'房間號',
 			name:'姓(英文)',
-			login:'客户登录',
-			empAccount:'员工账号',
-			password:'密码',
-			isAd:'是否为 Ad 账户?',
-			aLogin:'员工登录'
+			login:'客戶登錄',
+			empAccount:'員工賬號',
+			password:'密碼',
+			isAd:'是否為 Ad 賬戶?',
+			aLogin:'員工登陸'
 		},
 		foot:{
-			hotel:'公寓介绍',
-			promotion:'促销优惠',
+			hotel:'公寓介紹',
+			promotion:'促銷優惠',
 			surrounding:'本地攻略',
-			community:'社区生活'
+			community:'社區生活'
 		},
 		submitForm:{
 			name:'姓名',
-			tel:'电话',
-			number:'人数',
-			bz:'备注',
+			tel:'電話',
+			number:'人數',
+			bz:'備註',
 			subBtn:'提交',
-			alertTxt:'报名成功！',
-			alertTxt2:'预约成功！'
+			alertTxt:'報名成功！',
+			alertTxt2:'預約成功！'
 		},
 		apartment:{
-			book:'预定',
+			book:'預定',
 			maxPerson:'最大入住',
 			person:'人',
-			fcount:'房间数',
-			size:'房间面积',
+			fcount:'房間數',
+			size:'房間面積',
 			photo:'全景',
-            title:'房型介绍'
+            title:'房型介紹'
 		},
         order:{
-            title:'我的订单',
-            user:'客户',
-            roomid:'房间号',
-            time:'时间',
-            orderid:'订单号'
+            title:'我的訂單',
+            user:'客戶',
+            roomid:'房間號',
+            time:'時間',
+            orderid:'訂單號'
         },
 		lifeStyle:{
-			food:'餐饮外卖',
-			movie:'视频',
-			phone:'话费&流量',
-			express:'快递',
+			food:'餐飲外賣',
+			movie:'視頻',
+			phone:'話費&流量',
+			express:'快遞',
 			trip:'出行',
-			title:'生活服务'
+			title:'生活服務'
 		},
         news:{
             title:'消息'
         },
         judge:{
-            title:'评论',
-            txt:'写下您的评论',
+            title:'評論',
+            txt:'寫下你的評論',
 			close:'取消',
 			save:'保存',
             success:'提交成功',
-            error:'提交失败'
+            error:'提交失敗'
         },
 		map:{
 			title:'位置'

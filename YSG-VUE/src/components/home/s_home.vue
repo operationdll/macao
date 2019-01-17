@@ -521,7 +521,7 @@ export default {
         this.homeData = this.home.data;
         localStorage.HomeInfo = this.homeData.indexBackground+';'+this.homeData.name;
         //天气数据  TODO 增加天气图标的判断--------------------未完成
-        this.weather = this.home.data.wetherInfo;
+        //this.weather = this.home.data.wetherInfo;
         if (true) {
           this.weatherSrc = require("../../assets/images/icon-w-cloud.png");
         }
@@ -564,6 +564,23 @@ export default {
       }
     });
     var _this = this;
+
+    //获取天气预报信息
+    $.ajax({
+        url:'https://restapi.amap.com/v3/weather/weatherInfo?key=ad64c616dd8a8664ca79eb7eb0d58dd8&city=820000&extensions=all',
+        type:'GET',
+        async:false,
+        timeout:5000,
+        dataType:'json',
+        success:function(data){
+          if(data.status==1){
+            _this.weather.weatherEn = '';
+            _this.weather.temperatureFrom = data.forecasts[0].casts[0].daytemp+'℃';
+            _this.weather.temperatureTo = data.forecasts[0].casts[0].nighttemp+'℃';
+          }
+        }
+    });
+    
     $(document).ready(function() {
       $(".mask-actionsheet").click(function() {
         _this.$store.dispatch("changeLanguage");

@@ -13,7 +13,7 @@
 			<scroller ref="scroller">
 				<section class="index_top" :style="{backgroundImage: 'url(' + homeData.indexBackground + ')'}">
 					<span class="logo"></span>
-					<h4 class="user_name">{{fullName ? fullName: 'Visitor'}}</h4>
+					<h4 class="user_name">{{fullName ? 'TESTING VERSION': 'Visitor'}}</h4>
 					<ul class="weather_date">
 						<li class="date">
 							<div class="left"></div>
@@ -520,7 +520,7 @@ export default {
         this.homeData = this.home.data;
         localStorage.HomeInfo = this.homeData.indexBackground+';'+this.homeData.name;
         //天气数据
-        this.weather = this.home.data.wetherInfo;
+        // this.weather = this.home.data.wetherInfo;
         if (true) {
           this.weatherSrc = require("../../assets/images/icon-w-cloud.png");
         }
@@ -559,6 +559,22 @@ export default {
       }
     });
     var _this = this;
+
+    //获取天气预报信息
+    $.ajax({
+        url:'https://restapi.amap.com/v3/weather/weatherInfo?key=ad64c616dd8a8664ca79eb7eb0d58dd8&city=820000&extensions=all',
+        type:'GET',
+        async:false,
+        timeout:5000,
+        dataType:'json',
+        success:function(data){
+          if(data.status==1){
+            _this.weather.weatherEn = '';
+            _this.weather.temperatureFrom = data.forecasts[0].casts[0].daytemp+'℃';
+            _this.weather.temperatureTo = data.forecasts[0].casts[0].nighttemp+'℃';
+          }
+        }
+    });
 
     //获取物业详情
     let params2 = {
